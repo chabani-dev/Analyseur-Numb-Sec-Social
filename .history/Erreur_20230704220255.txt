@@ -1,0 +1,29 @@
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1767:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000
+
+problème de collision d'adresses IP ou de ports lors de la tentative d'écoute sur le port 5000. Le port est déjà utilisé par une autre application ou un autre processus sur votre système.
+***solution****
+
+Changez le numéro de port : Essayez de spécifier un autre numéro de port dans votre fichier "index.js". Par exemple, vous pouvez utiliser le port 3000 en remplaçant la ligne const port = 5000; par const port = 3000;. Assurez-vous également que le nouveau port choisi n'est pas utilisé par une autre application ou un autre processus.
+
+Vérifiez si le port est utilisé : Exécutez la commande netstat -ano | grep <numéro de port> (sur Linux/Mac) ou netstat -ano | findstr <numéro de port> (sur Windows) dans votre terminal pour vérifier si le port 5000 est utilisé par un autre processus.
+
+2 émé erreur 
+  code : 'ERR_MODULE_NOT_FOUND'
+
+  $solution
+  Le message d'erreur ERR_MODULE_NOT_FOUNDindique généralement que le module que vous essayez d'importer est introuvable. Dans votre code, vous importez des modules tels que express, mongooseet DogModel. Veuillez vous assurer que vous avez installé ces modules et qu'ils se trouvent dans le bon répertoire.
+
+3 émé erreur 
+  nodemon : Le terme «nodemon» n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme exécutable. Vérifiez l'orthographe du nom, ou si un chemin d'accès existe, vérifiez que le chemin d'accès est correct et réessayez. Au caractère Ligne:1 : 1 + nodemon index.js
+
+  $solution
+  L'erreur indique que la commande "nodemon" n'est pas reconnue. Cela peut se produire si Nodemon n'est pas correctement installé ou si l'environnement ne reconnaît pas son chemin d'accès
+
+  Vérifiez que vous avez correctement installé Nodemon en exécutant la commande npm install -g nodemon. 
